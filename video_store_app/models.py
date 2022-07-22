@@ -2,6 +2,7 @@ from enum import unique
 from ntpath import realpath
 from django.db import models
 
+
 class Video(models.Model):
     title = models.CharField(max_length=200, unique=True)
     rating = models.CharField(max_length=10)
@@ -22,3 +23,4 @@ class Rental(models.Model):
 
     class Meta:
         unique_together = (('customer', 'video'))
+
